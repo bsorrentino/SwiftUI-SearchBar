@@ -11,6 +11,7 @@
 		5F3E53672698570A004498CF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F3E53662698570A004498CF /* ContentView.swift */; };
 		5F3E53692698570C004498CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F3E53682698570C004498CF /* Assets.xcassets */; };
 		5F3E536C2698570C004498CF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F3E536B2698570C004498CF /* Preview Assets.xcassets */; };
+		5F3E537426985798004498CF /* SearchBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F3E537326985798004498CF /* SearchBoxView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,7 @@
 		5F3E53682698570C004498CF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5F3E536B2698570C004498CF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5F3E536D2698570C004498CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5F3E537326985798004498CF /* SearchBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBoxView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +54,7 @@
 		5F3E53632698570A004498CF /* SearchBox */ = {
 			isa = PBXGroup;
 			children = (
+				5F3E537326985798004498CF /* SearchBoxView.swift */,
 				5F3E53642698570A004498CF /* SearchBoxApp.swift */,
 				5F3E53662698570A004498CF /* ContentView.swift */,
 				5F3E53682698570C004498CF /* Assets.xcassets */,
@@ -139,6 +142,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5F3E53672698570A004498CF /* ContentView.swift in Sources */,
+				5F3E537426985798004498CF /* SearchBoxView.swift in Sources */,
 				5F3E53652698570A004498CF /* SearchBoxApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

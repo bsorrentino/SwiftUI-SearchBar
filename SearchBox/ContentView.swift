@@ -8,9 +8,26 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var searchText = ""
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        NavigationView {
+            SearchBar(text: $searchText ) {
+                List {
+                        ForEach( (1...50)
+                                    .map( { "Item\($0)" } )
+                                    .filter({ $0.starts(with: searchText)}), id: \.self) { item in
+                            HStack {
+                                Spacer()
+                                Text("\(item)")
+                                Spacer()
+                            }
+                            .padding()
+                            .background(Color.green)
+                        }
+                        
+                    }
+            }.navigationTitle("Search Box Test")
+        }
     }
 }
 
