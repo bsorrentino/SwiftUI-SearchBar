@@ -16,13 +16,7 @@ struct ContentView: View {
                         ForEach( (1...50)
                                     .map( { "Item\($0)" } )
                                     .filter({ $0.starts(with: searchText)}), id: \.self) { item in
-                            HStack {
-                                Spacer()
-                                Text("\(item)")
-                                Spacer()
-                            }
-                            .padding()
-                            .background(Color.green)
+                            Text("\(item)")
                         }
                         
                     }

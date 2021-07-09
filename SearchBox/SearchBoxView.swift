@@ -6,17 +6,17 @@
 //
 // @ref https://axelhodler.medium.com/creating-a-search-bar-for-swiftui-e216fe8c8c7f
 // @ref https://github.com/ageres7-dev/WeatherTV/blob/1b20637c90ffa18b154fb526233f656f6845bc5d/WeatherTV/Views/SearchView/SearchWrapper.swift
-
+// @ref http://blog.eppz.eu/swiftui-search-bar-in-the-navigation-bar/
 import SwiftUI
 
 class SearchBoxViewController<Content:View> : UIViewController {
     
     let searchControllerProvider: (() -> UISearchController)
-    let contentViewController: UIHostingController<Content>
+    private let contentViewController: UIHostingController<Content>
 
-    init( contentViewController:UIHostingController<Content>, searchControllerProvider:@escaping () -> UISearchController) {
+    init( content:Content, searchControllerProvider:@escaping () -> UISearchController ) {
      
-        self.contentViewController = contentViewController
+        self.contentViewController = UIHostingController( rootView: content )
         self.searchControllerProvider = searchControllerProvider
         
         super.init(nibName: nil, bundle: nil)
@@ -26,12 +26,14 @@ class SearchBoxViewController<Content:View> : UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func update( content:Content ) {
+    func update( content:Content?  ) {
         contentViewController.view.removeFromSuperview()
-        contentViewController.rootView = content
+        if let content = content {
+            contentViewController.rootView = content
+        }
         view.addSubview(contentViewController.view)
         contentViewController.view.frame = view.bounds
-        
+
         print( "view.bounds\n\(view.bounds)")
     }
     
@@ -40,12 +42,14 @@ class SearchBoxViewController<Content:View> : UIViewController {
         
         super.viewDidLoad()
 
-        view.addSubview(contentViewController.view)
-        contentViewController.view.frame = view.bounds
+        update( content: nil )
         
-        addChild(contentViewController)
-        contentViewController.didMove(toParent: self)
+//  WE GOT PROBLEM WITH REFRESH
+//        addChild(contentViewController)
+//        contentViewController.didMove(toParent: self)
     }
+    
+    
     
     override func didMove(toParent parent: UIViewController?) {
         super.didMove(toParent: parent)
@@ -115,6 +119,7 @@ struct SearchBar<Content: View>: UIViewControllerRepresentable {
         
         func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
             log.trace( "searchBarCancelButtonClicked")
+            text = ""
         }
     }
 
@@ -124,7 +129,7 @@ struct SearchBar<Content: View>: UIViewControllerRepresentable {
 
     func makeUIViewController(context: UIViewControllerRepresentableContext<SearchBar>) -> UIViewControllerType {
         
-        return SearchBoxViewController(contentViewController: UIHostingController(rootView: content() )) {
+        return SearchBoxViewController( content:content() ) {
             
             let searchController =  UISearchController(searchResultsController: nil)
             searchController.searchResultsUpdater = context.coordinator
