@@ -7,21 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5F3E53652698570A004498CF /* SearchBoxApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F3E53642698570A004498CF /* SearchBoxApp.swift */; };
+		5F3E53652698570A004498CF /* SearchBarApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F3E53642698570A004498CF /* SearchBarApp.swift */; };
 		5F3E53672698570A004498CF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F3E53662698570A004498CF /* ContentView.swift */; };
 		5F3E53692698570C004498CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F3E53682698570C004498CF /* Assets.xcassets */; };
 		5F3E536C2698570C004498CF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F3E536B2698570C004498CF /* Preview Assets.xcassets */; };
-		5F3E537426985798004498CF /* SearchBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F3E537326985798004498CF /* SearchBoxView.swift */; };
+		5F3E537426985798004498CF /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F3E537326985798004498CF /* SearchBarView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		5F3E53612698570A004498CF /* SearchBox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SearchBox.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		5F3E53642698570A004498CF /* SearchBoxApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBoxApp.swift; sourceTree = "<group>"; };
+		5F3E53612698570A004498CF /* SearchBar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SearchBar.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5F3E53642698570A004498CF /* SearchBarApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarApp.swift; sourceTree = "<group>"; };
 		5F3E53662698570A004498CF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		5F3E53682698570C004498CF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5F3E536B2698570C004498CF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5F3E536D2698570C004498CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5F3E537326985798004498CF /* SearchBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBoxView.swift; sourceTree = "<group>"; };
+		5F3E537326985798004498CF /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,7 +38,7 @@
 		5F3E53582698570A004498CF = {
 			isa = PBXGroup;
 			children = (
-				5F3E53632698570A004498CF /* SearchBox */,
+				5F3E53632698570A004498CF /* SearchBar */,
 				5F3E53622698570A004498CF /* Products */,
 			);
 			sourceTree = "<group>";
@@ -46,22 +46,22 @@
 		5F3E53622698570A004498CF /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				5F3E53612698570A004498CF /* SearchBox.app */,
+				5F3E53612698570A004498CF /* SearchBar.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		5F3E53632698570A004498CF /* SearchBox */ = {
+		5F3E53632698570A004498CF /* SearchBar */ = {
 			isa = PBXGroup;
 			children = (
-				5F3E537326985798004498CF /* SearchBoxView.swift */,
-				5F3E53642698570A004498CF /* SearchBoxApp.swift */,
+				5F3E537326985798004498CF /* SearchBarView.swift */,
+				5F3E53642698570A004498CF /* SearchBarApp.swift */,
 				5F3E53662698570A004498CF /* ContentView.swift */,
 				5F3E53682698570C004498CF /* Assets.xcassets */,
 				5F3E536D2698570C004498CF /* Info.plist */,
 				5F3E536A2698570C004498CF /* Preview Content */,
 			);
-			path = SearchBox;
+			path = SearchBar;
 			sourceTree = "<group>";
 		};
 		5F3E536A2698570C004498CF /* Preview Content */ = {
@@ -75,9 +75,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		5F3E53602698570A004498CF /* SearchBox */ = {
+		5F3E53602698570A004498CF /* SearchBar */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5F3E53702698570C004498CF /* Build configuration list for PBXNativeTarget "SearchBox" */;
+			buildConfigurationList = 5F3E53702698570C004498CF /* Build configuration list for PBXNativeTarget "SearchBar" */;
 			buildPhases = (
 				5F3E535D2698570A004498CF /* Sources */,
 				5F3E535E2698570A004498CF /* Frameworks */,
@@ -87,9 +87,9 @@
 			);
 			dependencies = (
 			);
-			name = SearchBox;
+			name = SearchBar;
 			productName = SearchBox;
-			productReference = 5F3E53612698570A004498CF /* SearchBox.app */;
+			productReference = 5F3E53612698570A004498CF /* SearchBar.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -106,7 +106,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 5F3E535C2698570A004498CF /* Build configuration list for PBXProject "SearchBox" */;
+			buildConfigurationList = 5F3E535C2698570A004498CF /* Build configuration list for PBXProject "SearchBar" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -119,7 +119,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				5F3E53602698570A004498CF /* SearchBox */,
+				5F3E53602698570A004498CF /* SearchBar */,
 			);
 		};
 /* End PBXProject section */
@@ -142,8 +142,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				5F3E53672698570A004498CF /* ContentView.swift in Sources */,
-				5F3E537426985798004498CF /* SearchBoxView.swift in Sources */,
-				5F3E53652698570A004498CF /* SearchBoxApp.swift in Sources */,
+				5F3E537426985798004498CF /* SearchBarView.swift in Sources */,
+				5F3E53652698570A004498CF /* SearchBarApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,10 +272,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"SearchBox/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"SearchBar/Preview Content\"";
 				DEVELOPMENT_TEAM = 48J595L9BX;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = SearchBox/Info.plist;
+				INFOPLIST_FILE = SearchBar/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -294,10 +294,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"SearchBox/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"SearchBar/Preview Content\"";
 				DEVELOPMENT_TEAM = 48J595L9BX;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = SearchBox/Info.plist;
+				INFOPLIST_FILE = SearchBar/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -313,7 +313,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		5F3E535C2698570A004498CF /* Build configuration list for PBXProject "SearchBox" */ = {
+		5F3E535C2698570A004498CF /* Build configuration list for PBXProject "SearchBar" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5F3E536E2698570C004498CF /* Debug */,
@@ -322,7 +322,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5F3E53702698570C004498CF /* Build configuration list for PBXNativeTarget "SearchBox" */ = {
+		5F3E53702698570C004498CF /* Build configuration list for PBXNativeTarget "SearchBar" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5F3E53712698570C004498CF /* Debug */,

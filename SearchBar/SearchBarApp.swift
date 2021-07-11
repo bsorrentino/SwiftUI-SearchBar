@@ -24,7 +24,7 @@ import OSLog
 let log = Logger(subsystem: "org.bsc.searchbox", category: "main")
 
 @main
-struct SearchBoxApp: App {
+struct SearchBarApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()

@@ -9,7 +9,7 @@
 // @ref http://blog.eppz.eu/swiftui-search-bar-in-the-navigation-bar/
 import SwiftUI
 
-class SearchBoxViewController<Content:View> : UIViewController {
+class SearchBarViewController<Content:View> : UIViewController {
     
     let searchControllerProvider: (() -> UISearchController)
     private let contentViewController: UIHostingController<Content>
@@ -67,7 +67,7 @@ class SearchBoxViewController<Content:View> : UIViewController {
 
 struct SearchBar<Content: View>: UIViewControllerRepresentable {
     
-    typealias UIViewControllerType = SearchBoxViewController<Content>
+    typealias UIViewControllerType = SearchBarViewController<Content>
     
     @Binding var text: String
     
@@ -129,7 +129,7 @@ struct SearchBar<Content: View>: UIViewControllerRepresentable {
 
     func makeUIViewController(context: UIViewControllerRepresentableContext<SearchBar>) -> UIViewControllerType {
         
-        return SearchBoxViewController( content:content() ) {
+        return SearchBarViewController( content:content() ) {
             
             let searchController =  UISearchController(searchResultsController: nil)
             searchController.searchResultsUpdater = context.coordinator
