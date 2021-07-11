@@ -11,13 +11,13 @@ import SwiftUI
 
 class SearchBarViewController<Content:View> : UIViewController {
     
-    let searchControllerProvider: (() -> UISearchController)
+    let searchController: UISearchController
     private let contentViewController: UIHostingController<Content>
 
-    init( content:Content, searchControllerProvider:@escaping () -> UISearchController ) {
+    init( searchController:UISearchController, content:Content ) {
      
         self.contentViewController = UIHostingController( rootView: content )
-        self.searchControllerProvider = searchControllerProvider
+        self.searchController = searchController
         
         super.init(nibName: nil, bundle: nil)
     }
@@ -59,7 +59,7 @@ class SearchBarViewController<Content:View> : UIViewController {
                 return
             }
             log.trace( "didMove to \(parent)")
-            parent.navigationItem.searchController = searchControllerProvider()
+            parent.navigationItem.searchController = searchController
 
          }
     }
@@ -87,39 +87,27 @@ struct SearchBar<Content: View>: UIViewControllerRepresentable {
         
         // Called when user selects one of the search suggestion buttons displayed under the keyboard on tvOS.
         func updateSearchResults(for searchController: UISearchController) {
-            log.trace( "updateSearchResults text = \(searchController.searchBar.text ?? "")")
-            
-            if isInPreviewMode {
-                self.text = "test in preview"
-                return
-            }
-            
+
             // IMPORTANT!!!
             // only if text has changed it will be reassigned.
             // reassignment implies a content view update
             if( self.text != searchController.searchBar.text ) {
-                log.trace( "updateSearchResults set text")
                 self.text = searchController.searchBar.text ?? ""
             }
         }
         
         // Called when user selects one of the search suggestion buttons displayed under the keyboard on tvOS.
-//        optional func updateSearchResults(for searchController: UISearchController, selecting searchSuggestion: UISearchSuggestion)
+        // func updateSearchResults(for searchController: UISearchController, selecting searchSuggestion: UISearchSuggestion)
 
         // MARK: - UISearchBarDelegate impl
 
         func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-            
-            //text = searchText
         }
-
+        
         func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
-            //text = ""
         }
         
         func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-            log.trace( "searchBarCancelButtonClicked")
-            text = ""
         }
     }
 
@@ -129,24 +117,20 @@ struct SearchBar<Content: View>: UIViewControllerRepresentable {
 
     func makeUIViewController(context: UIViewControllerRepresentableContext<SearchBar>) -> UIViewControllerType {
         
-        return SearchBarViewController( content:content() ) {
-            
-            let searchController =  UISearchController(searchResultsController: nil)
-            searchController.searchResultsUpdater = context.coordinator
-            searchController.searchBar.delegate = context.coordinator
-            //searchController.delegate = context.coordinator
+        let searchController =  UISearchController(searchResultsController: nil)
+        searchController.searchResultsUpdater = context.coordinator
+        searchController.searchBar.delegate = context.coordinator
+        //searchController.delegate = context.coordinator
 
-            searchController.searchBar.placeholder = placeholder
-            searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = placeholder
+        searchController.obscuresBackgroundDuringPresentation = false
 
-            return searchController
-
-        }
+        return SearchBarViewController( searchController:searchController, content:content() )
+        
         
     }
 
     func updateUIViewController(_ uiViewController: UIViewControllerType, context: UIViewControllerRepresentableContext<SearchBar>) {
-        log.trace( "updateUIViewController - searchText:\(text)" )
         
         uiViewController.update( content: content() )
 
