@@ -12,6 +12,7 @@
 		5F3E53692698570C004498CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F3E53682698570C004498CF /* Assets.xcassets */; };
 		5F3E536C2698570C004498CF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F3E536B2698570C004498CF /* Preview Assets.xcassets */; };
 		5F3E537426985798004498CF /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F3E537326985798004498CF /* SearchBarView.swift */; };
+		5F4A4ECF269B68D3009A45FC /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 5F4A4ECE269B68D3009A45FC /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		5F3E536B2698570C004498CF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5F3E536D2698570C004498CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5F3E537326985798004498CF /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
+		5F4A4ECE269B68D3009A45FC /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +40,7 @@
 		5F3E53582698570A004498CF = {
 			isa = PBXGroup;
 			children = (
+				5F4A4ECE269B68D3009A45FC /* README.md */,
 				5F3E53632698570A004498CF /* SearchBar */,
 				5F3E53622698570A004498CF /* Products */,
 			);
@@ -129,6 +132,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F4A4ECF269B68D3009A45FC /* README.md in Resources */,
 				5F3E536C2698570C004498CF /* Preview Assets.xcassets in Resources */,
 				5F3E53692698570C004498CF /* Assets.xcassets in Resources */,
 			);
@@ -281,7 +285,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = org.bsc.SearchBox;
+				PRODUCT_BUNDLE_IDENTIFIER = org.bsc.SearchBar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -303,7 +307,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = org.bsc.SearchBox;
+				PRODUCT_BUNDLE_IDENTIFIER = org.bsc.SearchBar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
