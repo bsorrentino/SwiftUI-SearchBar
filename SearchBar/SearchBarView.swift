@@ -54,14 +54,11 @@ class SearchBarViewController<Content:View> : UIViewController {
     override func didMove(toParent parent: UIViewController?) {
         super.didMove(toParent: parent)
         
-        if let parent = parent {
-            if parent.navigationItem.searchController != nil {
-                return
-            }
-            log.trace( "didMove to \(parent)")
-            parent.navigationItem.searchController = searchController
+        guard let parent = parent, parent.navigationItem.searchController == nil else  {return}
 
-         }
+        log.trace( "didMove to \(parent)")
+        parent.navigationItem.searchController = searchController
+
     }
 }
 

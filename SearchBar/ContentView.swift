@@ -20,7 +20,7 @@ struct ContentView: View {
                         }
                         
                     }
-            }.navigationTitle("Search Box Test")
+            }.navigationTitle("Search Bar Test")
         }
     }
 }
