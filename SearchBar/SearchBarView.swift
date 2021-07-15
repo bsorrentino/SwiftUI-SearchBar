@@ -12,7 +12,7 @@ import SwiftUI
 class SearchBarViewController<Content:View> : UIViewController {
     
     let searchController: UISearchController
-    private let contentViewController: UIHostingController<Content>
+    fileprivate let contentViewController: UIHostingController<Content>
 
     init( searchController:UISearchController, content:Content ) {
      
@@ -128,7 +128,13 @@ struct SearchBar<Content: View>: UIViewControllerRepresentable {
     }
 
     func updateUIViewController(_ uiViewController: UIViewControllerType, context: UIViewControllerRepresentableContext<SearchBar>) {
-        
+    
+//        let contentViewController = uiViewController.contentViewController
+//        contentViewController.view.removeFromSuperview()
+//        contentViewController.rootView = content()
+//        uiViewController.view.addSubview(contentViewController.view)
+//        contentViewController.view.frame = uiViewController.view.bounds
+
         uiViewController.update( content: content() )
 
     }
